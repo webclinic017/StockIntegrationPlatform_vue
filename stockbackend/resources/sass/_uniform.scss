@@ -1,0 +1,51 @@
+$text1: 75px;
+$text2: 38px;
+$text3: 28px;
+$text4: 24px;
+$text5: 20px;
+$text6: 12px;
+
+$color1: #252d59;
+$color2: #566b97;
+$color3: #ffffff;
+$color4: #000000;
+$color5: rgba(255, 255, 255, 0.6);
+$color6: #64a0a5;
+$color7: #515972;
+$color8: #688eaa;
+$color9: #1b433e;
+$color10: rgba(229, 229, 229, 0.9);
+
+$radius: 5px;
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: "Noto Serif TC", serif;
+  word-wrap:break-word;
+}
+
+@mixin Cube($textSize,$BKcolor,$color) {
+    width: 100%;
+    padding: 7px 0;
+    text-align: center;
+    line-height: $textSize;
+    background-color: $BKcolor;
+    border-radius: $radius;
+    color: $color;
+}
+
+@mixin BottomLine($textSize) {
+    width: 100%;
+    padding: 7px 0;
+    text-align: center;
+    line-height: $textSize;
+    color: $color9;
+    border-bottom: solid 2px $color9;
+}
+
+@mixin MarginHigth() {
+  padding: 30px 0;
+}

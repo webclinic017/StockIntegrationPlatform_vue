@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+}
+
+* {
+  font-family: "Noto Serif TC", serif;
+  word-wrap: break-word;
+}
+
+.container-all {
+  width: 100%;
+  height: calc(100vh - 64px);
+  background-image: url(/images/img2.jpg?c2243fcaaee84c2159988a0ac8254a41);
+  background-size: cover;
+  background-position: center;
+}
+
+.container-all .search-box {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+}
+
+.container-all .search-box h1 {
+  padding: 30px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 75px;
+  font-size: 75px;
+}
+
+.container-all .search-box h3 {
+  font-weight: 400;
+  text-align: center;
+  font-size: 38px;
+}
+
+.container-all .search-box .form-group {
+  margin: 30px 0;
+  position: relative;
+}
+
+.container-all .search-box .form-group::after {
+  position: absolute;
+  content: "";
+  top: 16px;
+  right: 34px;
+  background-image: url(/images/loupe.svg?6460d345796bbaf3cb166bc2fb1db7a0);
+  width: 25px;
+  height: 25px;
+}
+
+.container-all .search-box .form-group ::-webkit-input-placeholder {
+  font-size: 28px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.container-all .search-box .form-group ::-moz-placeholder {
+  font-size: 28px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.container-all .search-box .form-group :-ms-input-placeholder {
+  font-size: 28px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.container-all .search-box .form-group ::-ms-input-placeholder {
+  font-size: 28px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.container-all .search-box .form-group ::placeholder {
+  font-size: 28px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.container-all .search-box .form-group .search-form {
+  height: 64px;
+  border-radius: 30px;
+  background-color: #566b97;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.container-all .search-box span {
+  font-size: 20px;
+  font-weight: 500;
+}
+

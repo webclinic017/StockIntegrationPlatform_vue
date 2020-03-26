@@ -1,0 +1,66 @@
+@import "uniform";
+
+
+// navbar
+
+
+// container-all
+.container-all {
+  width: 100%;
+  height: calc(100vh - 64px);
+  background-image: url("../img/index/img2.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .search-box {
+    width: 100%;
+    background-color: $color5;
+    border-radius: $radius;
+
+    h1 {
+      padding: 30px 0;
+      font-weight: 600;
+      text-align:center;
+      line-height: $text1;
+      font-size: $text1;
+    }
+    h3 {
+      font-weight: 400;
+      text-align:center;
+      font-size: $text2;
+    }
+
+    .form-group {
+      margin: 30px 0;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        top: 16px;;
+        right: 34px;
+        background-image: url("../img/index/loupe.svg");
+        width: 25px;
+        height: 25px;
+      }
+      ::placeholder {
+        font-size: $text3;
+        text-align:center;
+        color: $color5;
+      }
+      .search-form {
+        height: 64px;
+        border-radius: 30px;
+        background-color: $color2;
+        color: $color3;
+        font-size: $text5;
+        font-weight: 300;
+      }
+
+    }
+
+    span {
+      font-size: $text5;
+      font-weight: 500;
+    }
+  }
+}

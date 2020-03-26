@@ -1,0 +1,96 @@
+@import "uniform";
+
+// tab-all
+.container {
+  background-color: $color10;
+
+  .main-btn {
+    @include MarginHigth();
+
+    .Cube {
+      border: 0;
+      font-size: $text3;
+      @include Cube($text3, $color6, $color3);
+    }
+  }
+
+  #content {
+    #basic-information-content {
+      .company {
+        .Cube {
+          font-size: $text3;
+          @include Cube($text3, $color7, $color3);
+        }
+      }
+
+      .company-title {
+        @include MarginHigth();
+        .title-Cube {
+          font-size: $text3;
+          @include Cube($text3, $color2, $color3);
+        }
+      }
+
+      .content {
+        .company-SubTitle {
+          padding: 0 15px 15px 15px;
+
+          .Cube {
+            font-size: $text4;
+            @include Cube($text3, $color8, $color3);
+          }
+        }
+
+        .company-content {
+          .Cube {
+            font-size: $text5;
+            @include BottomLine($text5);
+          }
+        }
+      }
+    }
+
+    #news-content {
+      display: none;
+      #example {
+        .Cube {
+          border: 0;
+          font-size: $text5;
+        }
+        .Cube-content {
+          border: 0;
+          font-size: $text5;
+          text-align: unset;
+        }
+      }
+    }
+
+    #historical-stock-content {
+      display: none;
+      .company-title {
+        @include MarginHigth();
+        .Cube {
+          input {
+            font-size: $text3;
+            @include Cube($text3, $color2, $color3);
+            border: 0;
+          }
+        }
+      }
+    }
+
+    #analysis-content {
+        display: none;
+        .company-title {
+          @include MarginHigth();
+          .Cube {
+            input {
+              font-size: $text3;
+              @include Cube($text3, $color2, $color3);
+              border: 0;
+            }
+          }
+        }
+    }
+  }
+}

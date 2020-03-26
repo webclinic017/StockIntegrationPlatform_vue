@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+}
+
+* {
+  font-family: "Noto Serif TC", serif;
+  word-wrap: break-word;
+}
+
+.container {
+  background-color: rgba(229, 229, 229, 0.9);
+}
+
+.container .main-btn {
+  padding: 30px 0;
+}
+
+.container .main-btn .Cube {
+  border: 0;
+  font-size: 28px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #64a0a5;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.container #content #basic-information-content .company .Cube {
+  font-size: 28px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #515972;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.container #content #basic-information-content .company-title {
+  padding: 30px 0;
+}
+
+.container #content #basic-information-content .company-title .title-Cube {
+  font-size: 28px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #566b97;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.container #content #basic-information-content .content .company-SubTitle {
+  padding: 0 15px 15px 15px;
+}
+
+.container #content #basic-information-content .content .company-SubTitle .Cube {
+  font-size: 24px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #688eaa;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.container #content #basic-information-content .content .company-content .Cube {
+  font-size: 20px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 20px;
+  color: #1b433e;
+  border-bottom: solid 2px #1b433e;
+}
+
+.container #content #news-content {
+  display: none;
+}
+
+.container #content #news-content #example .Cube {
+  border: 0;
+  font-size: 20px;
+}
+
+.container #content #news-content #example .Cube-content {
+  border: 0;
+  font-size: 20px;
+  text-align: unset;
+}
+
+.container #content #historical-stock-content {
+  display: none;
+}
+
+.container #content #historical-stock-content .company-title {
+  padding: 30px 0;
+}
+
+.container #content #historical-stock-content .company-title .Cube input {
+  font-size: 28px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #566b97;
+  border-radius: 5px;
+  color: #ffffff;
+  border: 0;
+}
+
+.container #content #analysis-content {
+  display: none;
+}
+
+.container #content #analysis-content .company-title {
+  padding: 30px 0;
+}
+
+.container #content #analysis-content .company-title .Cube input {
+  font-size: 28px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #566b97;
+  border-radius: 5px;
+  color: #ffffff;
+  border: 0;
+}
+
