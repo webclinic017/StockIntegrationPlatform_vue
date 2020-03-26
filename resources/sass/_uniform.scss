@@ -1,25 +1,38 @@
-$text1: 75px;
-$text2: 38px;
-$text3: 28px;
-$text4: 24px;
-$text5: 20px;
-$text6: 12px;
+$text1: 4.6rem; //h1
+$text2: 2.3rem; //大標
+$text3: 1.75rem; //副標
+$text4: 1.5rem; //小標
+$text5: 1.25rem; //內容
+$text6: 0.75rem; //補充
 
-$color1: #252d59;
-$color2: #566b97;
-$color3: #ffffff;
-$color4: #000000;
-$color5: rgba(255, 255, 255, 0.6);
-$color6: #64a0a5;
-$color7: #515972;
-$color8: #688eaa;
-$color9: #1b433e;
-$color10: rgba(229, 229, 229, 0.9);
+$color1: #295c82;//大標
+$color2: #566b97;//副標
+$color3: #688eaa;//小標 漸層色1
+$color4:#fff;//白色文字
+$color5: #1b433e;//深綠文字 底線
+$color6: #324362;//NavBar 漸層色2
+$color7: rgba(255,255,255,0.9);//search contentBG
+$color8: rgba(255,255,255,0.6);//search contentBG
 
 $radius: 5px;
+$sideWidth: 350px;
+
+html {
+  font-size: 16px;
+}
 
 body {
   margin: 0;
+  background-color: $color6;
+}
+
+ul {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 * {
@@ -27,23 +40,29 @@ body {
   word-wrap:break-word;
 }
 
-@mixin Cube($textSize,$BKcolor,$color) {
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin Cube($textSize,$BGcolor,$color) {
     width: 100%;
-    padding: 7px 0;
+    padding: 0.45rem 0;
     text-align: center;
     line-height: $textSize;
-    background-color: $BKcolor;
+    background: $BGcolor;
     border-radius: $radius;
     color: $color;
+    font-size: $textSize;
 }
 
 @mixin BottomLine($textSize) {
     width: 100%;
-    padding: 7px 0;
+    padding: 0.45rem 0;
     text-align: center;
     line-height: $textSize;
-    color: $color9;
-    border-bottom: solid 2px $color9;
+    color: $color5;
+    border-bottom: solid 2px $color5;
 }
 
 @mixin MarginHigth() {

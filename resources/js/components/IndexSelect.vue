@@ -4,13 +4,14 @@
     <multiselect
       v-model="value"
       :options="options"
-      :custom-label="nameWithLang"
-      placeholder="Select one"
+
+      placeholder="請選擇股票代碼"
       label="name"
       track-by="name"
       @input="changestockid(value)"
     ></multiselect>
   </div>
+  <!-- :custom-label="nameWithLang" -->
 </template>
 
 <script>
@@ -24,7 +25,7 @@ export default {
     return {
       value: { name: "股票代碼"},
       options: [
-        //   { name: 'Vue.js', language: 'JavaScript' },
+        //   { name: 'Vue.js' ,id: '2330'},
       ]
     };
   },
@@ -49,7 +50,7 @@ export default {
             name_ary.push(name_object);
         });
 
-        this.options = name_ary;
+        this.options = name_ary;  //送回data options
 
       });
     },

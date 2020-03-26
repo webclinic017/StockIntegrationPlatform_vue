@@ -1958,6 +1958,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1968,7 +1969,7 @@ __webpack_require__.r(__webpack_exports__);
       value: {
         name: "股票代碼"
       },
-      options: [//   { name: 'Vue.js', language: 'JavaScript' },
+      options: [//   { name: 'Vue.js' ,id: '2330'},
       ]
     };
   },
@@ -1990,7 +1991,7 @@ __webpack_require__.r(__webpack_exports__);
           name_object.name = element;
           name_ary.push(name_object);
         });
-        _this.options = name_ary;
+        _this.options = name_ary; //送回data options
       });
     },
     changestockid: function changestockid() {
@@ -37450,8 +37451,7 @@ var render = function() {
       _c("multiselect", {
         attrs: {
           options: _vm.options,
-          "custom-label": _vm.nameWithLang,
-          placeholder: "Select one",
+          placeholder: "請選擇股票代碼",
           label: "name",
           "track-by": "name"
         },
@@ -49920,11 +49920,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\nav.scss */"./resources/sass/nav.scss");
-__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\index.scss */"./resources/sass/index.scss");
-module.exports = __webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\basic_info.scss */"./resources/sass/basic_info.scss");
+__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\sass\nav.scss */"./resources/sass/nav.scss");
+__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\sass\index.scss */"./resources/sass/index.scss");
+module.exports = __webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\sass\basic_info.scss */"./resources/sass/basic_info.scss");
 
 
 /***/ })

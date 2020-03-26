@@ -1,5 +1,19 @@
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
+  background-color: #324362;
+}
+
+ul {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 * {
@@ -7,129 +21,272 @@ body {
   word-wrap: break-word;
 }
 
-.container {
-  background-color: rgba(229, 229, 229, 0.9);
+.center {
+  display: flex;
+  justify-content: center;
 }
 
-.container .main-btn {
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+main #content-left {
+  box-shadow: 7px 0px 5px rgba(0, 0, 0, 0.3);
+  background-color: #324362;
+  z-index: 5;
+  width: 350px;
+}
+
+main #content-left nav ul,
+main #content-left nav li,
+main #content-left nav .accordion {
+  width: 100%;
+}
+
+main #content-left nav .Cube {
+  width: 100%;
+  padding: 0.45rem 0;
+  text-align: center;
+  line-height: 2.3rem;
+  background: unset;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 2.3rem;
   padding: 30px 0;
 }
 
-.container .main-btn .Cube {
+main #content-left nav .Cube h2 {
+  display: inline-block;
+  padding-left: 10px;
+  position: relative;
+  margin-left: 2.3rem;
+}
+
+main #content-left nav .Cube h2::before {
+  position: absolute;
+  content: "";
+  background-image: url(/images/interview.png?167ae4471606df10c7ec7ce1e2c77650);
+  background-size: cover;
+  width: 2.3rem;
+  height: 2.3rem;
+  left: -2.3rem;
+  top: 0;
+}
+
+main #content-left nav form {
+  position: relative;
+}
+
+main #content-left nav form input {
+  width: 100%;
+  padding: 0.45rem 0;
+  text-align: center;
+  line-height: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  color: #1b433e;
+  font-size: 1.5rem;
   border: 0;
-  font-size: 28px;
-  width: 100%;
-  padding: 7px 0;
-  text-align: center;
-  line-height: 28px;
-  background-color: #64a0a5;
-  border-radius: 5px;
-  color: #ffffff;
+  border-radius: 1.5rem;
+  margin-bottom: 45px;
 }
 
-.container #content #basic-information-content .company .Cube {
-  font-size: 28px;
-  width: 100%;
-  padding: 7px 0;
-  text-align: center;
-  line-height: 28px;
-  background-color: #515972;
-  border-radius: 5px;
-  color: #ffffff;
+main #content-left nav form .search {
+  position: absolute;
+  right: 19px;
+  top: 8px;
+  width: 25px;
+  height: 25px;
+  background-image: url(/images/loupe-color.svg?fa1449d665775e2c905e1880e69a231f);
+  background-size: cover;
+  background-color: unset;
+  border: 0;
 }
 
-.container #content #basic-information-content .company-title {
+main #content-left nav .nav-btn {
+  margin-bottom: 30px;
+}
+
+main #content-left nav .nav-btn .nav-btn-header {
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+main #content-left nav .nav-btn .nav-btn-header::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+}
+
+main #content-left nav .nav-btn .nav-btn-header button {
+  width: 100%;
+  padding: 0.45rem 0;
+  text-align: center;
+  line-height: 1.75rem;
+  background: linear-gradient(to right, #688eaa, #324362);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.75rem;
+  border-radius: 0;
+  border: 0;
+}
+
+main #content-left nav .nav-btn .nav-btn-body li {
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+
+main #content-left nav .nav-btn .nav-btn-body li a {
+  color: #fff;
+}
+
+main #content-mid {
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 7px 0px 5px rgba(0, 0, 0, 0.3);
+  flex: 1;
+}
+
+main #content-mid .container {
+  padding-top: 30px;
+}
+
+main #content-mid .container #content #basic-information-content .company .Cube {
+  width: 100%;
+  padding: 0.45rem 0;
+  text-align: center;
+  line-height: 1.75rem;
+  background: #295c82;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.75rem;
+}
+
+main #content-mid .container #content #basic-information-content .company-title {
   padding: 30px 0;
 }
 
-.container #content #basic-information-content .company-title .title-Cube {
-  font-size: 28px;
+main #content-mid .container #content #basic-information-content .company-title .title-Cube {
   width: 100%;
-  padding: 7px 0;
+  padding: 0.45rem 0;
   text-align: center;
-  line-height: 28px;
-  background-color: #566b97;
+  line-height: 1.5rem;
+  background: #566b97;
   border-radius: 5px;
-  color: #ffffff;
+  color: #fff;
+  font-size: 1.5rem;
 }
 
-.container #content #basic-information-content .content .company-SubTitle {
+main #content-mid .container #content #basic-information-content .content .company-SubTitle {
   padding: 0 15px 15px 15px;
 }
 
-.container #content #basic-information-content .content .company-SubTitle .Cube {
-  font-size: 24px;
+main #content-mid .container #content #basic-information-content .content .company-SubTitle .Cube {
   width: 100%;
-  padding: 7px 0;
+  padding: 0.45rem 0;
   text-align: center;
-  line-height: 28px;
-  background-color: #688eaa;
+  line-height: 1.5rem;
+  background: #688eaa;
   border-radius: 5px;
-  color: #ffffff;
+  color: #fff;
+  font-size: 1.5rem;
 }
 
-.container #content #basic-information-content .content .company-content .Cube {
-  font-size: 20px;
+main #content-mid .container #content #basic-information-content .content .company-content .Cube {
   width: 100%;
-  padding: 7px 0;
+  padding: 0.45rem 0;
   text-align: center;
-  line-height: 20px;
+  line-height: 1.25rem;
   color: #1b433e;
   border-bottom: solid 2px #1b433e;
 }
 
-.container #content #news-content {
+main #content-mid .container #content #news-content {
   display: none;
 }
 
-.container #content #news-content #example .Cube {
+main #content-mid .container #content #news-content #example .Cube {
   border: 0;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
-.container #content #news-content #example .Cube-content {
+main #content-mid .container #content #news-content #example .Cube-content {
   border: 0;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: unset;
 }
 
-.container #content #historical-stock-content {
+main #content-mid .container #content #historical-stock-content {
   display: none;
 }
 
-.container #content #historical-stock-content .company-title {
+main #content-mid .container #content #historical-stock-content .company-title {
   padding: 30px 0;
 }
 
-.container #content #historical-stock-content .company-title .Cube input {
-  font-size: 28px;
+main #content-mid .container #content #historical-stock-content .company-title .Cube input {
+  font-size: 1.75rem;
   width: 100%;
-  padding: 7px 0;
+  padding: 0.45rem 0;
   text-align: center;
-  line-height: 28px;
-  background-color: #566b97;
+  line-height: 1.75rem;
+  background: #566b97;
   border-radius: 5px;
-  color: #ffffff;
+  color: #fff;
+  font-size: 1.75rem;
   border: 0;
 }
 
-.container #content #analysis-content {
+main #content-mid .container #content #analysis-content {
   display: none;
 }
 
-.container #content #analysis-content .company-title {
+main #content-mid .container #content #analysis-content .company-title {
   padding: 30px 0;
 }
 
-.container #content #analysis-content .company-title .Cube input {
-  font-size: 28px;
+main #content-mid .container #content #analysis-content .company-title .Cube input {
+  font-size: 1.75rem;
   width: 100%;
-  padding: 7px 0;
+  padding: 0.45rem 0;
   text-align: center;
-  line-height: 28px;
-  background-color: #566b97;
+  line-height: 1.75rem;
+  background: #566b97;
   border-radius: 5px;
-  color: #ffffff;
+  color: #fff;
+  font-size: 1.75rem;
   border: 0;
+}
+
+main #content-right {
+  z-index: 1;
+  width: 350px;
+  background-color: #324362;
+}
+
+main #content-right #member .user-photo {
+  width: 170px;
+  padding: 30px 0;
+}
+
+main #content-right #member .user-photo img {
+  width: 100%;
+}
+
+main #content-right #member .Cube button {
+  width: 100%;
+  padding: 0.45rem 0;
+  text-align: center;
+  line-height: 1.75rem;
+  background: unset;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.75rem;
+  margin-bottom: 15px;
 }
 

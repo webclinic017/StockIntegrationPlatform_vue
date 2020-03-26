@@ -1,5 +1,19 @@
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
+  background-color: #324362;
+}
+
+ul {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 * {
@@ -7,8 +21,13 @@ body {
   word-wrap: break-word;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 .navbar {
-  background-color: #252d59;
+  background-color: #295c82;
   height: 64px;
 }
 
@@ -21,7 +40,7 @@ body {
   padding: 0 10px;
   position: relative;
   font-weight: 200;
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 .navbar .navbar-nav .logo::before {
