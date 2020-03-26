@@ -56,14 +56,18 @@ main #content-left nav .Cube {
   padding: 30px 0;
 }
 
-main #content-left nav .Cube h2 {
+main #content-left nav .Cube a {
+  color: #fff;
+}
+
+main #content-left nav .Cube a h2 {
   display: inline-block;
   padding-left: 10px;
   position: relative;
   margin-left: 2.3rem;
 }
 
-main #content-left nav .Cube h2::before {
+main #content-left nav .Cube a h2::before {
   position: absolute;
   content: "";
   background-image: url(/images/interview.png?167ae4471606df10c7ec7ce1e2c77650);

@@ -14,19 +14,18 @@ class FrontController extends Controller
 
     public function basic_info($id)
     {
-
-        $no = $id.'.TW';
+        $no = $id . '.TW';
         $begin_dt = "2019-01-01";
         $end_dt = "2019-01-30";
 
-        $jsondata5= shell_exec("python python/historical_stock.py $no $begin_dt $end_dt");
+        $jsondata5 = shell_exec("python python/historical_stock.py $no $begin_dt $end_dt");
         // dd($jsondata5);
         // 先找到completed的字串位置從起始到結束有幾個
         $st_word = stripos($jsondata5, "completed") + 9;
         $data = json_decode(substr($jsondata5, $st_word));
 
         //******************************************************************************* */
-        $jsondata= shell_exec("python python/bband_finaltest.py $no $begin_dt $end_dt");
+        $jsondata = shell_exec("python python/bband_finaltest.py $no $begin_dt $end_dt");
         $st_word = stripos($jsondata, "completed") + 9;
         $data_backtest = json_decode(substr($jsondata, $st_word));
 
@@ -38,7 +37,20 @@ class FrontController extends Controller
 
         //******************************************************************************* */
 
-        return view('front/basic_info', compact('data_news','data','data_backtest'));
+        return view('front/basic_info', compact('data_news', 'data', 'data_backtest','id'));
+    }
+
+    public function history($id)
+    {
+        $no = $id . '.TW';
+        $begin_dt = "2019-01-01";
+        $end_dt = "2019-01-30";
+
+        $jsondata5 = shell_exec("python python/crawl_historic_v2.py $no $begin_dt $end_dt");
+        $st_word = stripos($jsondata5, "completed") + 9;
+        $data_backtest = json_decode(substr($jsondata5, $st_word));
+        //  dd($data_backtest);
+        return view('front/history', compact('data_backtest','id'));
     }
 
 
@@ -78,8 +90,5 @@ class FrontController extends Controller
 
     //     return view('front/basic_info', compact('data'));
     // }
-
-
-
 
 }

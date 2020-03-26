@@ -5,12 +5,14 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="{{asset("css/basic_info.css")}}">
 <script
-src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign"></script>
+    src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign">
+</script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.19.3"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@0.2.0"></script>
-<script src="{{ asset('js/historical-stock.js') }}" ></script>
-<script src="{{ asset('js/chartjs-chart-financial.js') }}" ></script>
+
+{{-- <script src="{{ asset('js/historical-stock.js') }}" ></script> --}}
+{{-- <script src="{{ asset('js/chartjs-chart-financial.js') }}" ></script> --}}
 
 
 @endsection
@@ -385,7 +387,6 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
@@ -398,7 +399,7 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" defer></script>
 
-<script>
+{{-- <script>
     var rrs = {!! json_encode($data) !!};
 
     var data =[]
@@ -429,9 +430,9 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
         },
 
     });
-</script>
+</script> --}}
 
-<script>
+{{-- <script>
     var win = document.querySelector('#win');
     var res = {!! json_encode($data_backtest) !!};
     // console.log(res);
@@ -518,9 +519,9 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 
     });
 
-</script>
+</script> --}}
 
-<script>
+{{-- <script>
     $(document).ready(function () {
         $('#news-data').DataTable({
             "language": {
@@ -567,10 +568,6 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 
 
 
-</script>
-
-
-
-
+</script> --}}
 
 @endsection

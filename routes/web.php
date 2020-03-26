@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index');
 Route::get('/basic_info/{id}', 'FrontController@basic_info');
+Route::get('/history/{id}', 'FrontController@history');
 
 // Route::post('/ajax/checkID', 'FrontController@stock_ID_check');
 

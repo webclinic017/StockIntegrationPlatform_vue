@@ -49920,11 +49920,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\sass\nav.scss */"./resources/sass/nav.scss");
-__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\sass\index.scss */"./resources/sass/index.scss");
-module.exports = __webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform_vue\resources\sass\basic_info.scss */"./resources/sass/basic_info.scss");
+__webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform_vue\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform_vue\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform_vue\resources\sass\nav.scss */"./resources/sass/nav.scss");
+__webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform_vue\resources\sass\index.scss */"./resources/sass/index.scss");
+module.exports = __webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform_vue\resources\sass\basic_info.scss */"./resources/sass/basic_info.scss");
 
 
 /***/ })

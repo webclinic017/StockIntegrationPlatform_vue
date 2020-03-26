@@ -33,22 +33,26 @@
             <div id="content-left">
                 <nav class="row d-flex align-items-center flex-column">
                     <div class="Cube">
-                        <h2>輕鬆投</h2>
+                        <a href="/">
+                            <h2>輕鬆投</h2>
+                        </a>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <form action="">
                             <index-select></index-select>
-                            <button class="search"></button>
+                            {{-- <button class="search"></button> --}}
                         </form>
                     </div>
                     <div class="col-12 d-flex align-items-center flex-column">
                         <div class="accordion" id="accordionExample">
                             <div class="nav-btn">
                                 <div class="nav-btn-header center" id="heading-1">
-                                    <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-1"
-                                        aria-expanded="true" aria-controls="nav-btn-1">
-                                        公司資料
-                                    </button>
+                                    <a href="/basic_info/{{$id}}">
+                                        <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-1"
+                                            aria-expanded="true" aria-controls="nav-btn-1">
+                                            公司資料
+                                        </button>
+                                    </a>
                                 </div>
                                 <!-- <div id="nav-btn-1" class="collapse show center" aria-labelledby="heading-1"
                                     data-parent="#accordionExample">
@@ -132,10 +136,12 @@
                             </div>
                             <div class="nav-btn">
                                 <div class="nav-btn-header center" id="heading-4">
-                                    <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-4"
-                                        aria-expanded="true" aria-controls="nav-btn-4">
-                                        歷史資料
-                                    </button>
+                                    <a href="/history/{{$id}}">
+                                        <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-4"
+                                            aria-expanded="true" aria-controls="nav-btn-4">
+                                            歷史資料
+                                        </button>
+                                    </a>
                                 </div>
 
                                 <!-- <div id="nav-btn-4" class="collapse show center" aria-labelledby="heading-4"
