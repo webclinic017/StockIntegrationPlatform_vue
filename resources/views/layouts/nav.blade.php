@@ -17,7 +17,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
 
     <script src="https://unpkg.com/vue-multiselect@2.1.0"></script>
     <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
@@ -46,14 +46,14 @@
                     <div class="col-12 d-flex align-items-center flex-column">
                         <div class="accordion" id="accordionExample">
                             <div class="nav-btn">
-                                <div class="nav-btn-header center" id="heading-1">
-                                    <a href="/basic_info/{{$id}}">
+                                <a href="/basic_info/{{$id}}">
+                                    <div class="nav-btn-header center" id="heading-1">
                                         <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-1"
                                             aria-expanded="true" aria-controls="nav-btn-1">
                                             公司資料
                                         </button>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
                                 <!-- <div id="nav-btn-1" class="collapse show center" aria-labelledby="heading-1"
                                     data-parent="#accordionExample">
                                     <div class="nav-btn-body">
@@ -135,14 +135,14 @@
                                 </div> -->
                             </div>
                             <div class="nav-btn">
-                                <div class="nav-btn-header center" id="heading-4">
-                                    <a href="/history/{{$id}}">
+                                <a href="/history/{{$id}}">
+                                    <div class="nav-btn-header center" id="heading-4">
                                         <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-4"
                                             aria-expanded="true" aria-controls="nav-btn-4">
                                             歷史資料
                                         </button>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
 
                                 <!-- <div id="nav-btn-4" class="collapse show center" aria-labelledby="heading-4"
                                     data-parent="#accordionExample">
@@ -232,6 +232,8 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="{{asset("/assets/web/assets/jquery/jquery.min.js")}}"></script> {{--AJAX需載入此行--}}
+
+    <script src="{{ asset('js/app.js') }}"></script>
 
     @yield('js')
 </body>

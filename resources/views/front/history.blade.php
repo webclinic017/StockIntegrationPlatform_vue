@@ -62,21 +62,17 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
             {{-- 歷史股價 --}}
             <div class="row company">
                 <div class="col-12 d-flex justify-content-center">
-                    <div class="Cube">
-                        <div class="myChartDiv">
-                            <canvas id="Chart_bband"></canvas>
-                        </div>
+                    <div class="myChartDiv">
+                        <canvas id="Chart_bband"></canvas>
                     </div>
                 </div>
             </div>
 
             {{-- 歷史股量 --}}
             <div class="row company">
-                <div class="col-12">
-                    <div class="Cube">
-                        <div class="myChartDiv">
-                            <canvas id="Chart_volume"></canvas>
-                        </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="myChartDiv">
+                        <canvas id="Chart_volume"></canvas>
                     </div>
                 </div>
             </div>
