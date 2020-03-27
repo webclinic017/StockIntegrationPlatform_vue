@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontController@index');
+
+// 公司基本資料
 Route::get('/basic_info/{id}', 'FrontController@basic_info');
 
 // 法說會

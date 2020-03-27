@@ -30,7 +30,7 @@
                 <div class="col-12">
                     <div class="Cube">
                         <span>
-                            法說會
+                            法說會資訊
                         </span>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-8 company-content">
                             <div class="Cube">
-                                <span></span>
+                                <span>{{$concall_data->date}}</span>
                             </div>
                         </div>
                         <div class="col-4 company-SubTitle">
@@ -64,7 +64,7 @@
                         </div>
                         <div class="col-8 company-content">
                             <div class="Cube">
-                                <span></span>
+                                <span>{{$concall_data->location}}</span>
                             </div>
                         </div>
                         <div class="col-4 company-SubTitle">
@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-8 company-content">
                             <div class="Cube">
-                                <span></span>
+                                <span>{{$concall_data->import_info}}</span>
                             </div>
                         </div>
                         <div class="col-4 company-SubTitle">
@@ -84,7 +84,20 @@
                         </div>
                         <div class="col-8 company-content">
                             <div class="Cube">
-                                <span></span>
+                            {{-- 中文檔 --}}
+                                <span>
+                                    中文檔:<a href="{{$concall_data->chinese_href}}">
+                                        {{$concall_data->chinese_file}}
+                                    </a>
+                                </span>
+                                &emsp;,&emsp;
+
+                            {{-- 英文檔 --}}
+                                <span>
+                                    英文檔:<a href="{{$concall_data->english_href}}">
+                                        {{$concall_data->english_file}}
+                                    </a>
+                                </span>
                             </div>
                         </div>
                         <div class="col-4 company-SubTitle">
@@ -94,7 +107,8 @@
                         </div>
                         <div class="col-8 company-content">
                             <div class="Cube">
-                                <span></span>
+                                <span><a href="{{$concall_data->info}}">{{$concall_data->info}}</a>
+                                </span>
                             </div>
                         </div>
                         <div class="col-4  company-SubTitle">
@@ -104,7 +118,7 @@
                         </div>
                         <div class="col-8 company-content">
                             <div class="Cube">
-                                <span>營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重</span>
+                                <span><a href="{{$concall_data->video}}">{{$concall_data->video}}</a>
                             </div>
                         </div>
                         <div class="col-4  company-SubTitle">
@@ -114,7 +128,7 @@
                         </div>
                         <div class="col-8 company-content">
                             <div class="Cube">
-                                <span>營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重營收比重</span>
+                                <span>{{$concall_data->other}}</span>
                             </div>
                         </div>
                     </div>

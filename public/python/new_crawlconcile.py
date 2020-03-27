@@ -11,13 +11,14 @@ Created on Tue Mar 24 20:23:43 2020
 
 @author: User
 """
+import sys
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import json
 
-path = "D:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
+path = "C:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
 driver = webdriver.Chrome(path)
 
 
@@ -26,7 +27,8 @@ driver.get('https://mops.twse.com.tw/mops/web/t100sb07_1')
 
 #輸入股票代碼
 #
-stockid="2330"
+# stockid="2330"
+stockid=sys.argv[1]
 
 driver.find_element_by_id('co_id').send_keys(stockid)#找id=email
 driver.find_element_by_id('co_id').send_keys(Keys.ENTER)
@@ -62,7 +64,7 @@ tablec_dict = {
              "date": table_data[1].replace('\n',''),
              #召開法人說明會地點：
              "location": table_data[3].replace('\n',''),
-             
+
               #法人說明會擇要訊息：：
              "import_info": table_data[5].replace('\n',''),
              #法人說明會簡報內容中文：：
@@ -77,6 +79,12 @@ tablec_dict = {
 
              #法人說明會相關資訊：
              "info": table_data[13].replace('\n',''),
+
+             #影音連結：
+             "video": table_data[14].replace('\n','').replace('\xa0',''),
+
+             #其他應敘明事項：
+             "other": table_data[16],
 
             }
 

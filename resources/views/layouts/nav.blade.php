@@ -40,7 +40,6 @@
                     <div class="mb-3">
                         <form action="">
                             <index-select></index-select>
-                            {{-- <button class="search"></button> --}}
                         </form>
                     </div>
                     <div class="col-12 d-flex align-items-center flex-column">
@@ -107,12 +106,14 @@
                                 </div>
                             </div>
                             <div class="nav-btn">
-                                <div class="nav-btn-header center" id="heading-3">
-                                    <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-3"
-                                        aria-expanded="true" aria-controls="nav-btn-3">
-                                        法說會資訊
-                                    </button>
-                                </div>
+                                <a href="/concall/{{$id}}">
+                                    <div class="nav-btn-header center" id="heading-4">
+                                        <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-4"
+                                            aria-expanded="true" aria-controls="nav-btn-4">
+                                            法說會資訊
+                                        </button>
+                                    </div>
+                                </a>
                                 <!-- <div id="nav-btn-3" class="collapse show center" aria-labelledby="heading-3"
                                     data-parent="#accordionExample">
                                     <div class="nav-btn-body">
@@ -221,18 +222,6 @@
         </main>
     </div>
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
     <script src="{{asset("/assets/web/assets/jquery/jquery.min.js")}}"></script> {{--AJAX需載入此行--}}
 
     <script src="{{ asset('js/app.js') }}"></script>
