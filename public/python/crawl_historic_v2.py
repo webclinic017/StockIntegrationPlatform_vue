@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Thu Mar 26 20:59:15 2020
+
+@author: User
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Tue Mar 24 09:42:25 2020
 
 @author: User
@@ -12,19 +19,22 @@ import numpy as np
 import json
 #現在時間
 import datetime
-#import matplotlib.pyplot as plt
-stock_id="2330"
+# stock_id="2330"
 
 yf.pdr_override() # <== that's all it takes :-)
 
 #現在時間
 # using now() to get current time
 current_time = datetime.datetime.now().strftime("%Y-%m-%d")
-two_years=(datetime.datetime.now() - datetime.timedelta(days=0.5*365)).strftime("%Y-%m-%d")
+two_years=(datetime.datetime.now() - datetime.timedelta(days=2*365)).strftime("%Y-%m-%d")
 
 
 # download dataframe
+# data = pdr.get_data_yahoo(stock_id+".TW", start=two_years, end=current_time)
+# download dataframe
 data = pdr.get_data_yahoo(sys.argv[1], start=two_years, end=current_time)
+
+#------------------------------------------------------------------------
 
 
 
@@ -47,11 +57,16 @@ mean60=smaCal(data.Close,60).replace(np.nan, "null").values.tolist()
 #時間
 time=data.index
 
+
 time2=time.strftime('%d %b %Y %H:%M')
 
 time2=time2+' Z'
 
 time22=list(time2)
+
+
+#加這個可以註解時間
+labeltime=list(time.strftime('%Y-%m-%d'))
 
 
 data_time=time22
@@ -114,6 +129,7 @@ pricemean = {
     "shortmean":mean5,
      "midmean":mean20,
      "longmean":mean60,
+     "labeltime":labeltime#加一個時間
 }
 
 volume={

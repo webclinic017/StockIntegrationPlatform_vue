@@ -15,7 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index');
 Route::get('/basic_info/{id}', 'FrontController@basic_info');
+
+// 法說會
+Route::get('/concall/{id}', 'FrontController@concall');
+
+// 歷史資料
 Route::get('/history/{id}', 'FrontController@history');
+
+// 交易回測
+Route::get('/backtrade_input/{id}', 'FrontController@backtrade_input');
+Route::post('/backtrade/{id}', 'FrontController@backtrade');
+
+
 
 // Route::post('/ajax/checkID', 'FrontController@stock_ID_check');
 

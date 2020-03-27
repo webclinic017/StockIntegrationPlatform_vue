@@ -166,12 +166,14 @@
                                 </div> -->
                             </div>
                             <div class="nav-btn">
-                                <div class="nav-btn-header center" id="heading-5">
-                                    <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-5"
-                                        aria-expanded="true" aria-controls="nav-btn-5">
-                                        回測
-                                    </button>
-                                </div>
+                                <a href="/backtrade_input/{{$id}}">
+                                    <div class="nav-btn-header center" id="heading-4">
+                                        <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-4"
+                                            aria-expanded="true" aria-controls="nav-btn-4">
+                                            回測
+                                        </button>
+                                    </div>
+                                </a>
 
                                 <!-- <div id="nav-btn-4" class="collapse show center" aria-labelledby="heading-4"
                                     data-parent="#accordionExample">

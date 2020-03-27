@@ -14,6 +14,9 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 <script src="{{ asset('js/chartjs-chart-financial.js') }}" ></script>
 
 <style>
+    .container{
+        height: 100vh;
+    }
     .myChartDiv {
         max-width: 90%;
         max-height: 400px;
@@ -46,32 +49,53 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 
         <div id="basic-information-content">
 
-            <form class="row d-flex justify-content-center mb-3" action="">
-                <div class="col-3">
+            <div class="row company">
+                <div class="col-12">
                     <div class="Cube">
-                        <input type="date">
+                        <span>
+                            歷史交易資料&emsp;{{$id}}
+                        </span>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="Cube">
-                        <input type="date">
-                    </div>
-                </div>
-            </form>
+            </div>
+
+
+
 
             {{-- 歷史股價 --}}
             <div class="row company">
                 <div class="col-12 d-flex justify-content-center">
-                    <div class="myChartDiv">
+                    <div class="myChartDiv d-flex align-items-center flex-column">
+                        <div class="col-6">
+                            <div class="row company-title">
+                                <div class="col-12">
+                                    <div class="title-Cube">
+                                        <span>K線圖</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <canvas id="Chart_bband"></canvas>
                     </div>
+
                 </div>
             </div>
 
             {{-- 歷史股量 --}}
             <div class="row company">
                 <div class="col-12 d-flex justify-content-center">
-                    <div class="myChartDiv">
+                    <div class="myChartDiv d-flex align-items-center flex-column">
+                        <div class="col-6">
+                            <div class="row company-title">
+                                <div class="col-12">
+                                    <div class="title-Cube">
+                                        <span>成交量圖</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <canvas id="Chart_volume"></canvas>
                     </div>
                 </div>
@@ -92,19 +116,17 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 <script>
     var res = {!! json_encode($data_backtest) !!};
 
-    // console.log(res);
-    // console.log(res[0].shortmean);
+    console.log("res");
+    console.log(res[0].shortmean);
 
-    // console.log(res);
+    console.log(res);
 
     res[1].forEach((element,index) => {
         newDate = luxon.DateTime.fromRFC2822(element.t)
         res[1][index].t = newDate.valueOf()
     });
 
-    // console.log(res[1]);
-
-
+    console.log(res[1]);
 
 
     var ctx = document.getElementById('Chart_bband').getContext('2d');
@@ -144,7 +166,8 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
                     borderColor:'black',
                 },
             ],
-            labels: res[2],
+            // labels: res[2],
+            labels: res[0].labeltime,
 
         },
 
@@ -160,16 +183,17 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 <script>
     var rss = {!! json_encode($data_backtest) !!};
 
-    //  console.log(rss[0].shortmean);
+     console.log(rss[0].shortmean);
 
-    // console.log(rss);
+    console.log(rss);
 
     rss[1].forEach((element,index) => {
         newDate = luxon.DateTime.fromRFC2822(element.t)
         rss[1][index].t = newDate.valueOf()
     });
 
-    // console.log(rss[1]);
+    console.log(rss[1]);
+
 
     var ctx = document.getElementById('Chart_volume').getContext('2d');
     ctx.canvas.width = 1000;
@@ -188,8 +212,11 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
                     backgroundColor:'rgba(30,144,255, 0.7)',
                 },
             ],
-            labels: rss[2],
+            labels: rss[0].labeltime,
+
         },
+
+
     });
 
 </script>

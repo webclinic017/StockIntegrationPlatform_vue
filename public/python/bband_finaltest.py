@@ -4,21 +4,31 @@ Created on Fri May  3 19:23:39 2019
 
 @author: User
 """
+
 from pandas_datareader import data as pdr
+import time
 import yfinance as yf
+import json
+import sys
 import pandas as pd
 import numpy as np
-import json
-#import matplotlib.pyplot as plt
+
+#原本
+# import time
+# import sys
+# from pandas_datareader import data as pdr
+# import yfinance as yf
+# import pandas as pd
+# import numpy as np
+# import json
+#原本結束
 
 yf.pdr_override()  # <== that's all it takes :-)
 
 # download dataframe
-data = pdr.get_data_yahoo("2317.TW", start="2019-01-01", end="2020-03-18")
+# data = pdr.get_data_yahoo("2317.TW", start="2019-01-01", end="2020-03-18")
+data = pdr.get_data_yahoo((sys.argv[1]), start=sys.argv[2], end=sys.argv[3])
 
-# 結束
-# 向上突破函數
-# upbreakBB2=upbreak(data.Close,tsmcBBands.downBBand)
 def upbreak(tsLine, tsRefLine):
     # tsLine=data.Close[data.Close.index[20:][0]:]#tsLine=Close[boundDC.index[0]:]
     #tsRefLine=boundDC.upboundDC#
@@ -73,9 +83,15 @@ principalArr = []  # 每筆交易次數本金
 
 
 # 變數設定(更改這裡的變數)
-mean = 20
-std = 1.2
-principal = 1000000  # 本金
+# mean = 20
+# std = 1.2
+# principal = 1000000  # 本金
+
+mean = int(sys.argv[4])
+std = int(sys.argv[5])
+principal = int(sys.argv[6])  # 本金
+
+# data = pdr.get_data_yahoo(sys.argv[1]+".TW", start=sys.argv[2], end=sys.argv[3])
 
 
 # 交易策略變數設定
@@ -90,7 +106,6 @@ date = []  # 獲利的日期
 # 2019-5-4 updated 對應數值
 buyArr = []  # 存取每次buy
 sellArr = []  # 存取每次sell
-# 2019-5-7 加入本金
 
 
 for i in range((len(tsmcBBands)-1)):  # (len(tsmcBBands)-1)
@@ -224,6 +239,11 @@ time2=time.strftime('%d %b %Y %H:%M')
 time2=time2+' Z'
 time22=list(time2)
 
+#加這個可以註解時間
+labeltime=list(time.strftime('%Y-%m-%d'))
+
+
+
 #重組資料陣列
 newData=[]
                                                 #特別注意鍵值名稱要與圖表命名規則相同
@@ -240,17 +260,28 @@ for vel,index in enumerate(data['Close']):      #在陣列 第vel比 加入鍵�
 
 
 
+#新data(把布林通道都變成null)
+tsmcBBands['time']=tsmcBBands.index
+data['time']=data.index
+newdata= pd.merge(data,tsmcBBands, on='time',how='outer')
+newdata2=newdata.iloc[:,6:]
+#新data結束
+data_upBBand = newdata2['upBBand'].replace(np.nan, "null").values.tolist()
+data_midBBand = newdata2['midBBand'].replace(np.nan, "null").values.tolist()
+data_downBBand = newdata2['downBBand'].replace(np.nan, "null").values.tolist()
+
+#新data結束
+
 
 data_time = time22
-# data_close = data['Close'].values.tolist()
-data_upBBand = tsmcBBands['upBBand'].values.tolist()
-data_midBBand = tsmcBBands['midBBand'].values.tolist()
-data_downBBand = tsmcBBands['downBBand'].values.tolist()
-# 新加的欄位
-# data_open = data['Open'].values.tolist()
-# data_high = data['High'].values.tolist()
-# data_low = data['Low'].values.tolist()
+
+#data_upBBand = tsmcBBands['upBBand'].values.tolist()
+#data_midBBand = tsmcBBands['midBBand'].values.tolist()
+#data_downBBand = tsmcBBands['downBBand'].values.tolist()
+
+
 data_volume = data['Volume'].values.tolist()
+
 # 累績報酬率
 data_tradecum = tradecum['profit'].values.tolist()
 data_cum = cum['Close'].values.tolist()
@@ -259,22 +290,25 @@ data_cum = cum['Close'].values.tolist()
 
 
 
-
+#布林通道
 a = {
-    # "volume": data_volume,
+    "volume": data_volume,
     "upBBand": data_upBBand,
     "midBBand": data_midBBand,
     "downBBand": data_downBBand,
+    "labeltime":labeltime#加一個時間
 }
 
-
+#績效表現
 b = {
      # 績效表現
     'winRate': winRate,
-    'meanWin': meanWin,
-    'meanLoss': meanLoss,
+    'loseRate': 100-winRate,
+    'meanWin': meanWin*1000,
+    'meanLoss': meanLoss*1000,
 }
 
+#交易報酬
 c = {
     # 有交易累積報酬
     'tradecum': data_tradecum,
@@ -284,20 +318,8 @@ c = {
 
 
 
+#20200326改
 
-
-data = [a,b,c,newData,data_time]
-data= json.dumps(data)
-print(data)
-
-
-
-
-
-
-# 有交易與未交易的比較圖
-# fig = plt.figure() # 新图 0
-# plt.figure(figsize=(10,10)) #整个现实图（框架）的大小
-# plt.plot(cum,label="cumret",color='k')#plt.plot(data.Close[:'2017-12-31'],label="Close",color='k')
-# plt.plot(tradecum,label="tradecumret",color='b',linestyle='dashed')
-
+bbanddata = [a,b,c,newData,data_time]
+finalbbanddata= json.dumps(bbanddata)
+print(finalbbanddata)
