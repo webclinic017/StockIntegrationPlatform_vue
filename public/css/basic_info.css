@@ -140,16 +140,14 @@ main #content-left nav .nav-btn .nav-btn-header button {
   border: 0;
 }
 
-main #content-left nav .nav-btn .nav-btn-body li {
+main #content-left nav .nav-btn .nav-btn-body a {
   margin-top: 15px;
   font-size: 1.5rem;
-}
-
-main #content-left nav .nav-btn .nav-btn-body li a {
   color: #fff;
 }
 
 main #content-mid {
+  min-height: 500vh;
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 7px 0px 5px rgba(0, 0, 0, 0.3);

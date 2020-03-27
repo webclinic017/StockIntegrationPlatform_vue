@@ -118,12 +118,12 @@
                         </div>
                         <div class="col-8 company-content">
                             <div class="Cube">
-                                <span><a href="{{$concall_data->video}}">{{$concall_data->video}}</a>
+                                <span>{{$concall_data->video}}</span>
                             </div>
                         </div>
                         <div class="col-4  company-SubTitle">
                             <div class="Cube">
-                                <span>其他應敘明事項    </span>
+                                <span>其他應敘明事項</span>
                             </div>
                         </div>
                         <div class="col-8 company-content">

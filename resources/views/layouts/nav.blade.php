@@ -7,20 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>輕鬆投</title>
     <link rel="shortcut icon" href="{{asset('img/index/interview.png')}}" type="image/x-icon">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    {{-- <link rel="stylesheet" href="{{asset("css/nav.css")}}"> --}}
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:100,200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- Scripts -->
 
-
-    <script src="https://unpkg.com/vue-multiselect@2.1.0"></script>
     <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+    <script src="https://unpkg.com/vue-multiselect@2.1.0"></script>
 
     @yield('css')
 </head>
@@ -75,33 +71,40 @@
                                 </div> -->
                             </div>
                             <div class="nav-btn">
-                                <div class="nav-btn-header center" id="heading-2">
-                                    <button class="" type="button" data-toggle="collapse" data-target="#nav-btn-2"
-                                        aria-expanded="true" aria-controls="nav-btn-2">
-                                        財務資訊
-                                    </button>
-                                </div>
-                                <div id="nav-btn-2" class="collapse show center" aria-labelledby="heading-2"
-                                    data-parent="#accordionExample">
+                                <a href="/finance/{{$id}}">
+                                    <div class="nav-btn-header center" id="heading-2">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#nav-btn-2"
+                                            aria-expanded="true" aria-controls="nav-btn-2">
+                                            財務資訊
+                                        </button>
+                                    </div>
+                                </a>
+                                <div id="nav-btn-2" class="collapse center show" aria-labelledby="heading-2"
+                                    data-parent="#accordionTest" >
                                     <div class="nav-btn-body">
-                                        <ul>
-                                            <li>
-                                                <a href="">財務結構</a>
-                                            </li>
-                                            <li>
-                                                <a href="">償債能力</a>
-                                            </li>
-                                            <li>
-                                                <a href="">經營能力</a>
-                                            </li>
-                                            <li>
-                                                <a href="">獲利能力</a>
-                                            </li>
-                                            <li>
-                                                <a href="">現金流量</a>
-                                            </li>
-                                        </ul>
+                                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                            aria-orientation="vertical">
+                                            <a class=" active" id="v-pills-home-tab" data-toggle="pill"
+                                                href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                                                aria-selected="true">財務結構</a>
 
+                                            <a class="" id="v-pills-profile-tab" data-toggle="pill"
+                                                href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                                                aria-selected="false">償債能力</a>
+
+                                            <a class="" id="v-pills-messages-tab" data-toggle="pill"
+                                                href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+                                                aria-selected="false">經營能力</a>
+
+                                            <a class="" id="v-pills-settings-tab" data-toggle="pill"
+                                                href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                                                aria-selected="false">獲利能力</a>
+
+                                            <a class="" id="v-pills-settings-tab" data-toggle="pill"
+                                            href="#v-pills-xxx" role="tab" aria-controls="v-pills-xxx"
+                                            aria-selected="false">現金流量</a>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -222,11 +225,15 @@
         </main>
     </div>
 
+
+
+
     <script src="{{asset("/assets/web/assets/jquery/jquery.min.js")}}"></script> {{--AJAX需載入此行--}}
 
     <script src="{{ asset('js/app.js') }}"></script>
 
     @yield('js')
+
 </body>
 
 </html>

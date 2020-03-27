@@ -18,6 +18,9 @@ Route::get('/', 'FrontController@index');
 // 公司基本資料
 Route::get('/basic_info/{id}', 'FrontController@basic_info');
 
+// 財務資訊
+Route::get('/finance/{id}', 'FrontController@finance');
+
 // 法說會
 Route::get('/concall/{id}', 'FrontController@concall');
 

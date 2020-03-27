@@ -22,6 +22,19 @@ class FrontController extends Controller
         return view('front/basic_info', compact('basic_data','id'));
     }
 
+    // 財務資訊
+    public function finance($id)
+    {
+        $no = $id;
+        // dd($no);
+        $jsonbasic = shell_exec("python python/crawl_finance.py $no");
+        // dd($jsonbasic);
+        $finance_data = json_decode($jsonbasic);
+        // dd($finance_data);
+        return view('front/finance', compact('finance_data','id'));
+    }
+
+
     // 法說會
     public function concall($id)
     {

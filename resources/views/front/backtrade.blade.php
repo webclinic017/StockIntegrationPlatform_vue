@@ -63,9 +63,9 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 
 
             {{-- 布林通道曲線 --}}
-            <div class="row company">
+            <div class="row company mb-5">
                 <div class="col-12 d-flex justify-content-center">
-                    <div class="myChartDiv d-flex align-items-center flex-column">
+                    <div class="myChartDiv d-flex align-items-center flex-column mb-5">
                         <div class="col-6">
                             <div class="row company-title">
                                 <div class="col-12">
