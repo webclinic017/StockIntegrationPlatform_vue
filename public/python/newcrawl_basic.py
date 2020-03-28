@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 24 22:28:59 2020
-
-@author: User
-"""
 import sys
 import time
 from selenium import webdriver
@@ -12,9 +6,7 @@ from bs4 import BeautifulSoup
 import json
 
 
-path = "D:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
-
-driver = webdriver.Chrome(path)
+driver = webdriver.Chrome()
 #driver = webdriver.Chrome()
 driver.get('https://mops.twse.com.tw/mops/web/t05st03')
 

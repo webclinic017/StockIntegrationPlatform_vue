@@ -1,28 +1,5 @@
 @extends('layouts/nav')
 
-@section('css')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="{{asset("css/basic_info.css")}}">
-<script
-    src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/luxon@1.19.3"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@0.2.0"></script>
-
-{{-- <script src="{{ asset('js/historical-stock.js') }}" ></script> --}}
-{{-- <script src="{{ asset('js/chartjs-chart-financial.js') }}" ></script> --}}
-
-<style>
-    .container{
-        height: 100vh;
-    }
-</style>
-
-
-@endsection
-
 
 
 @section('content')
@@ -30,10 +7,10 @@
 
     <div id="content">
 
-        <div id="basic-information-content">
+        <div id="main">
             <!-- 公司資料 -->
-            <div class="row company">
-                <div class="col-12">
+            <div class="row">
+                <div class="col-12 main_title">
                     <div class="Cube">
                         <span>
                             公司資料
@@ -46,65 +23,61 @@
             <!-- 基本資料,股東會及最近一年配股 -->
 
             <div class="row ">
-
-
-                <div class="col-6">
-                    <div class="row company-title">
+                <div class="col-6 area">
+                    <div class="row area_title">
                         <div class="col-12">
-                            <div class="title-Cube">
+                            <div class="Cube">
                                 <span>基本資料</span>
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="row content">
-                        <div class="col-5 company-SubTitle">
+                    <div class="row area_content">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>公司名稱</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->company}}</span>
                             </div>
                         </div>
-                        <div class="col-5 company-SubTitle">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>產業類別</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->industry}}</span>
                             </div>
                         </div>
-                        <div class="col-5 company-SubTitle">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>成立時間</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->start_time}}</span>
                             </div>
                         </div>
-                        <div class="col-5 company-SubTitle">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>上市(櫃)時間</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->IPO}}</span>
                             </div>
                         </div>
-                        <div class="col-5 company-SubTitle">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>董事長</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->Chairman}}</span>
                             </div>
@@ -113,63 +86,63 @@
                 </div>
 
 
-                <div class="col-6">
+                <div class="col-6 area">
 
-                    <div class="row company-title">
+                    <div class="row area_title">
                         <div class="col-12 ">
-                            <div class="title-Cube">
+                            <div class="Cube">
                                 <span>資本額與發行股票資訊</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row content">
-                        <div class="col-5 company-SubTitle">
+                    <div class="row area_content">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>實收資本</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->capital}}</span>
                             </div>
                         </div>
-                        <div class="col-5 company-SubTitle">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>已發行普通股</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->publiccommon_stock}}</span>
                             </div>
                         </div>
-                        <div class="col-5 company-SubTitle">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>普通股股面額</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->common_stock}}</span>
                             </div>
                         </div>
-                        <div class="col-5 company-SubTitle">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>特別股數</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->preferred_stock}}</span>
                             </div>
                         </div>
-                        <div class="col-5 company-SubTitle">
+                        <div class="col-5 SubTitle">
                             <div class="Cube">
                                 <span>投資人關係聯絡人</span>
                             </div>
                         </div>
-                        <div class="col-7 company-content">
+                        <div class="col-7 content">
                             <div class="Cube">
                                 <span>{{$basic_data->investman}}</span>
                             </div>
@@ -179,17 +152,17 @@
             </div>
 
             <div class="row ">
-                <div class="col-12">
-                    <div class="row company-title">
+                <div class="col-12 area">
+                    <div class="row area_title">
                         <div class="col-12">
-                            <div class="title-Cube">
+                            <div class="Cube">
                                 <span>主要營業項目</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row content">
-                        <div class="col-12 company-content">
+                    <div class="row area_content">
+                        <div class="col-12 content">
                             <div class="Cube">
                                 <span>{{$basic_data->Main_business}}</span>
                             </div>

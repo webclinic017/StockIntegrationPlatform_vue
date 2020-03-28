@@ -2,6 +2,12 @@ html {
   font-size: 16px;
 }
 
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 body {
   margin: 0;
   background-color: #324362;
@@ -38,6 +44,12 @@ main #content-left {
   width: 350px;
 }
 
+@media (max-width: 1024px) {
+  main #content-left {
+    width: 200px;
+  }
+}
+
 main #content-left nav ul,
 main #content-left nav li,
 main #content-left nav .accordion {
@@ -53,7 +65,7 @@ main #content-left nav .Cube {
   border-radius: 5px;
   color: #fff;
   font-size: 2.3rem;
-  padding: 30px 0;
+  padding: 1.85rem 0;
 }
 
 main #content-left nav .Cube a {
@@ -78,38 +90,8 @@ main #content-left nav .Cube a h2::before {
   top: 0;
 }
 
-main #content-left nav form {
-  position: relative;
-}
-
-main #content-left nav form input {
-  width: 100%;
-  padding: 0.45rem 0;
-  text-align: center;
-  line-height: 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 5px;
-  color: #1b433e;
-  font-size: 1.5rem;
-  border: 0;
-  border-radius: 1.5rem;
-  margin-bottom: 45px;
-}
-
-main #content-left nav form .search {
-  position: absolute;
-  right: 19px;
-  top: 8px;
-  width: 25px;
-  height: 25px;
-  background-image: url(/images/loupe-color.svg?fa1449d665775e2c905e1880e69a231f);
-  background-size: cover;
-  background-color: unset;
-  border: 0;
-}
-
 main #content-left nav .nav-btn {
-  margin-bottom: 30px;
+  margin-bottom: 1.85rem;
 }
 
 main #content-left nav .nav-btn .nav-btn-header {
@@ -141,13 +123,13 @@ main #content-left nav .nav-btn .nav-btn-header button {
 }
 
 main #content-left nav .nav-btn .nav-btn-body a {
-  margin-top: 15px;
+  margin-top: 1rem;
   font-size: 1.5rem;
   color: #fff;
 }
 
 main #content-mid {
-  min-height: 500vh;
+  min-height: 100vh;
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 7px 0px 5px rgba(0, 0, 0, 0.3);
@@ -155,10 +137,10 @@ main #content-mid {
 }
 
 main #content-mid .container {
-  padding-top: 30px;
+  padding-top: 1.85rem;
 }
 
-main #content-mid .container #content #basic-information-content .company .Cube {
+main #content-mid .container #content #main .main_title .Cube {
   width: 100%;
   padding: 0.45rem 0;
   text-align: center;
@@ -169,11 +151,11 @@ main #content-mid .container #content #basic-information-content .company .Cube 
   font-size: 1.75rem;
 }
 
-main #content-mid .container #content #basic-information-content .company-title {
+main #content-mid .container #content #main .area .area_title {
   padding: 30px 0;
 }
 
-main #content-mid .container #content #basic-information-content .company-title .title-Cube {
+main #content-mid .container #content #main .area .area_title .Cube {
   width: 100%;
   padding: 0.45rem 0;
   text-align: center;
@@ -184,11 +166,11 @@ main #content-mid .container #content #basic-information-content .company-title 
   font-size: 1.5rem;
 }
 
-main #content-mid .container #content #basic-information-content .content .company-SubTitle {
+main #content-mid .container #content #main .area .area_content .SubTitle {
   padding: 0 15px 15px 15px;
 }
 
-main #content-mid .container #content #basic-information-content .content .company-SubTitle .Cube {
+main #content-mid .container #content #main .area .area_content .SubTitle .Cube {
   width: 100%;
   padding: 0.45rem 0;
   text-align: center;
@@ -199,70 +181,14 @@ main #content-mid .container #content #basic-information-content .content .compa
   font-size: 1.5rem;
 }
 
-main #content-mid .container #content #basic-information-content .content .company-content .Cube {
+main #content-mid .container #content #main .area .area_content .content .Cube {
   width: 100%;
   padding: 0.45rem 0;
   text-align: center;
   line-height: 1.25rem;
   color: #1b433e;
   border-bottom: solid 2px #1b433e;
-}
-
-main #content-mid .container #content #news-content {
-  display: none;
-}
-
-main #content-mid .container #content #news-content #example .Cube {
-  border: 0;
   font-size: 1.25rem;
-}
-
-main #content-mid .container #content #news-content #example .Cube-content {
-  border: 0;
-  font-size: 1.25rem;
-  text-align: unset;
-}
-
-main #content-mid .container #content #historical-stock-content {
-  display: none;
-}
-
-main #content-mid .container #content #historical-stock-content .company-title {
-  padding: 30px 0;
-}
-
-main #content-mid .container #content #historical-stock-content .company-title .Cube input {
-  font-size: 1.75rem;
-  width: 100%;
-  padding: 0.45rem 0;
-  text-align: center;
-  line-height: 1.75rem;
-  background: #566b97;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 1.75rem;
-  border: 0;
-}
-
-main #content-mid .container #content #analysis-content {
-  display: none;
-}
-
-main #content-mid .container #content #analysis-content .company-title {
-  padding: 30px 0;
-}
-
-main #content-mid .container #content #analysis-content .company-title .Cube input {
-  font-size: 1.75rem;
-  width: 100%;
-  padding: 0.45rem 0;
-  text-align: center;
-  line-height: 1.75rem;
-  background: #566b97;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 1.75rem;
-  border: 0;
 }
 
 main #content-right {
@@ -271,9 +197,15 @@ main #content-right {
   background-color: #324362;
 }
 
+@media (max-width: 1024px) {
+  main #content-right {
+    width: 200px;
+  }
+}
+
 main #content-right #member .user-photo {
-  width: 170px;
-  padding: 30px 0;
+  width: 10.625rem;
+  padding: 1.85rem 0;
 }
 
 main #content-right #member .user-photo img {
@@ -289,6 +221,28 @@ main #content-right #member .Cube button {
   border-radius: 5px;
   color: #fff;
   font-size: 1.75rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  padding: 0.45rem 0;
+  text-align: center;
+  line-height: 0.75rem;
+  background: #1b433e;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+footer .text_size {
+  padding: 0 1rem;
+  position: absolute;
+  right: 0;
+}
+
+footer .text_size span {
+  padding: 0 1rem;
 }
 

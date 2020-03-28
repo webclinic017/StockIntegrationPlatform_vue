@@ -1,16 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 26 20:59:15 2020
-
-@author: User
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 24 09:42:25 2020
-
-@author: User
-"""
 import sys
 from pandas_datareader import data as pdr
 import yfinance as yf

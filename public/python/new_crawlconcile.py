@@ -1,16 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 27 11:43:10 2020
-
-@author: User
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 24 20:23:43 2020
-
-@author: User
-"""
 import sys
 import time
 from selenium import webdriver
@@ -18,8 +5,8 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import json
 
-path = "D:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
-driver = webdriver.Chrome(path)
+
+driver = webdriver.Chrome()
 
 
 #driver = webdriver.Chrome()

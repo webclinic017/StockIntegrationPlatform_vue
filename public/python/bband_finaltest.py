@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri May  3 19:23:39 2019
-
-@author: User
-"""
-
 from pandas_datareader import data as pdr
 import time
 import yfinance as yf
@@ -13,15 +6,6 @@ import sys
 import pandas as pd
 import numpy as np
 
-#原本
-# import time
-# import sys
-# from pandas_datareader import data as pdr
-# import yfinance as yf
-# import pandas as pd
-# import numpy as np
-# import json
-#原本結束
 
 yf.pdr_override()  # <== that's all it takes :-)
 

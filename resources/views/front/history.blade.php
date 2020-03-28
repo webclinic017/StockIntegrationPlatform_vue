@@ -3,9 +3,7 @@
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="{{asset("css/basic_info.css")}}">
-<script
-src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.19.3"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@0.2.0"></script>
@@ -44,12 +42,9 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 @section('content')
 
 <section class="container">
-
     <div id="content">
-
-        <div id="basic-information-content">
-
-            <div class="row company">
+        <div id="main">
+            <div class="row main_title">
                 <div class="col-12">
                     <div class="Cube">
                         <span>
@@ -58,51 +53,30 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
                     </div>
                 </div>
             </div>
-
-
-
-
             {{-- 歷史股價 --}}
-            <div class="row company">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="myChartDiv d-flex align-items-center flex-column">
-                        <div class="col-6">
-                            <div class="row company-title">
-                                <div class="col-12">
-                                    <div class="title-Cube">
-                                        <span>K線圖</span>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="row area">
+                <div class="col-12">
+                    <div class="area_title">
+                        <div class="Cube">
+                            <span>K線圖</span>
                         </div>
-
-                        <canvas id="Chart_bband"></canvas>
                     </div>
-
+                    <canvas id="Chart_bband"></canvas>
                 </div>
             </div>
 
             {{-- 歷史股量 --}}
-            <div class="row company">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="myChartDiv d-flex align-items-center flex-column">
-                        <div class="col-6">
-                            <div class="row company-title">
-                                <div class="col-12">
-                                    <div class="title-Cube">
-                                        <span>成交量圖</span>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="row area">
+                <div class="col-12">
+                    <div class="area_title">
+                        <div class="Cube">
+                            <span>成交量圖</span>
                         </div>
-
-                        <canvas id="Chart_volume"></canvas>
                     </div>
+                    <canvas id="Chart_volume"></canvas>
                 </div>
             </div>
-
         </div>
-
     </div>
 
 </section>

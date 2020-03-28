@@ -1,16 +1,10 @@
 @extends('layouts/nav')
 
 @section('css')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="{{asset("css/basic_info.css")}}">
-<script
-src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.19.3"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@0.2.0"></script>
-
-{{-- <script src="{{ asset('js/historical-stock.js') }}" ></script> --}}
 <script src="{{ asset('js/chartjs-chart-financial.js') }}" ></script>
 
 <style>
@@ -47,7 +41,7 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 
     <div id="content">
 
-        <div id="basic-information-content">
+        <div id="main">
 
             <div class="row company">
                 <div class="col-12">

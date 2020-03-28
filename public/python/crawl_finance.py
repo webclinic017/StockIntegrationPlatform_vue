@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 24 22:52:26 2020
-
-@author: User
-"""
 #教學網站
 #https://www.itread01.com/content/1523104707.html
 #https://www.techbeamers.com/locate-elements-selenium-python/#locate-element-by-xpath
@@ -16,8 +10,7 @@ from bs4 import BeautifulSoup
 import json
 
 
-path = "D:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
-driver = webdriver.Chrome(path)
+driver = webdriver.Chrome()
 driver.get('https://mops.twse.com.tw/mops/web/t05st22_q1')
 
 #輸入股票代碼
