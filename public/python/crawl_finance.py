@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 import json
 
 
-path = "C:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
+path = "D:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
 driver = webdriver.Chrome(path)
 driver.get('https://mops.twse.com.tw/mops/web/t05st22_q1')
 
@@ -62,8 +62,9 @@ table_all=table[15].find_all('td')
 financerate_data=[]
 for i in range(0,len(table_all)):
     rate=table_all[i].text.replace(" ", "")
-    new_rate=float(rate)
-    financerate_data.append(new_rate)
+    #new_rate=float(rate)
+    #financerate_data.append(new_rate)
+    financerate_data.append(rate)
 
 
 
@@ -71,7 +72,9 @@ for i in range(0,len(table_all)):
 trs =  table[15].find_all('tr')
 rows = list()
 for tr in trs:
-    rows.append([td.text.replace(" ", '').replace('\xa0', '') for td in tr.find_all('td')])
+    rows.append([td.text.replace(" ", '').replace("NA", 'null') for td in tr.find_all('td')])
+
+    #rows.append([td.text.replace(" ", '').replace('\xa0', '') for td in tr.find_all('td')])
 
 
 

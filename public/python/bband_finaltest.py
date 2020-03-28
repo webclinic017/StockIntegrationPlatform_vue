@@ -88,7 +88,7 @@ principalArr = []  # 每筆交易次數本金
 # principal = 1000000  # 本金
 
 mean = int(sys.argv[4])
-std = int(sys.argv[5])
+std = float(sys.argv[5])
 principal = int(sys.argv[6])  # 本金
 
 # data = pdr.get_data_yahoo(sys.argv[1]+".TW", start=sys.argv[2], end=sys.argv[3])

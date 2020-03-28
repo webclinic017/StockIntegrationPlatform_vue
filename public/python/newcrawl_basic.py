@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 import json
 
 
-path = "C:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
+path = "D:\selenium_driver_chrome\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
 
 driver = webdriver.Chrome(path)
 #driver = webdriver.Chrome()

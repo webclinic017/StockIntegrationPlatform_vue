@@ -58,12 +58,12 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 
     <div class=" form-row col-12">
         <div class="form-group col-6">
-            <label for="stock_begin_dt">起始時間</label>
+            <label for="stock_begin_dt">起始時間(起始和終止時間之間的天數差距不能超過平均數)</label>
             <input type="date" class="form-control" id="stock_begin_dt" name="stock_begin_dt" required>
         </div>
 
         <div class="form-group col-6">
-            <label for="stock_end_dt">終止時間</label>
+            <label for="stock_end_dt">終止時間(可輸入今天以前的任何日期)</label>
             <input type="date" class="form-control" id="stock_end_dt" name="stock_end_dt" required>
         </div>
     </div>
@@ -71,17 +71,17 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 
     {{-- 新加的 --}}
     <div class="form-group col-12">
-        <label for="stock_mean">平均數</label>
+        <label for="stock_mean">平均數(整數)</label>
         <input type="number" class="form-control" id="stock_mean" name="stock_mean" required>
     </div>
 
     <div class="form-group col-12">
-        <label for="stock_std">標準差</label>
-        <input type="number"  class="form-control" id="stock_std" name="stock_std" required>
+        <label for="stock_std">標準差(可輸入整數和小數點)</label>
+        <input type="number" step="0.01" class="form-control" id="stock_std" name="stock_std" required>
     </div>
 
     <div class="form-group col-12">
-        <label for="stock_principle">投入金額</label>
+        <label for="stock_principle">投入金額(整數)</label>
         <input type="number" class="form-control" id="stock_principle" name="stock_principle" required>
     </div>
 
