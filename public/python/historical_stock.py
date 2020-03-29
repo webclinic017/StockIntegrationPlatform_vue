@@ -8,9 +8,9 @@ import json
 yf.pdr_override()  # <== that's all it takes :-)
 
 # download dataframe
-# data = pdr.get_data_yahoo("2330.TW", start="2019-01-01", end="2020-03-01")
+data = pdr.get_data_yahoo("2330.TW", start="2019-01-01", end="2020-03-01")
 
-data = pdr.get_data_yahoo(sys.argv[1], start=sys.argv[2], end=sys.argv[3])
+# data = pdr.get_data_yahoo(sys.argv[1], start=sys.argv[2], end=sys.argv[3])
 
 #時間格式重組
 time=data.index
@@ -25,15 +25,15 @@ for vel,time in enumerate(time22):              #將陣列加入第一筆字典�
     newData += [{"t":str(time)}]
 for vel,index in enumerate(data['Open']):       #在陣列 第vel比 加入鍵值Open 並將值轉為字串
     newData[vel]['o'] = str(index)
-for vel,index in enumerate(data['High']):       #在陣列 第vel比 加入鍵值High 並將值轉為字串
-    newData[vel]['h'] = str(index)
-for vel,index in enumerate(data['Low']):        #在陣列 第vel比 加入鍵值Low 並將值轉為字串
-    newData[vel]['l'] = str(index)
-for vel,index in enumerate(data['Close']):      #在陣列 第vel比 加入鍵值Close 並將值轉為字串
-    newData[vel]['c'] = str(index)
+# for vel,index in enumerate(data['High']):       #在陣列 第vel比 加入鍵值High 並將值轉為字串
+#     newData[vel]['h'] = str(index)
+# for vel,index in enumerate(data['Low']):        #在陣列 第vel比 加入鍵值Low 並將值轉為字串
+#     newData[vel]['l'] = str(index)
+# for vel,index in enumerate(data['Close']):      #在陣列 第vel比 加入鍵值Close 並將值轉為字串
+#     newData[vel]['c'] = str(index)
 
-data= json.dumps(newData)
-print(data)
+# data= json.dumps(newData)
+print(newData)
 
 
 # 有交易與未交易的比較圖

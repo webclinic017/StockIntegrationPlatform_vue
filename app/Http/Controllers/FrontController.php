@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Basic_info;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -14,11 +15,35 @@ class FrontController extends Controller
     // 公司基本資料
     public function basic_info($id)
     {
-        $no = $id;
-        $jsonbasic = shell_exec("python python/newcrawl_basic.py $no");
-        // dd($jsonbasic);
-        $basic_data = json_decode($jsonbasic);
-        // dd($basic_data);
+        $stock_id = Basic_info::where('stock_id', $id)->first();
+        if( $stock_id != null) {
+            $basic_data = Basic_info::where('stock_id', $id)->first();
+        }
+        else {
+
+            $stock_id = Basic_info::where('stock_id', $basic_data->stock_id)->first();
+            if($stock_id == null){
+                $jsonbasic = shell_exec("python python/newcrawl_basic.py $id");
+                $basic_data = json_decode($jsonbasic);
+                $Basic = new Basic_info();
+                $Basic->stock_id = $basic_data->stock_id;
+                $Basic->company =$basic_data->company;
+                $Basic->industry =$basic_data->industry;
+                $Basic->start_time =$basic_data->start_time;
+                $Basic->IPO =$basic_data->IPO;
+                $Basic->Chairman =$basic_data->Chairman;
+                $Basic->capital =$basic_data->capital;
+                $Basic->publiccommon_stock =$basic_data->publiccommon_stock;
+                $Basic->common_stock =$basic_data->common_stock;
+                $Basic->preferred_stock =$basic_data->preferred_stock;
+                $Basic->investman =$basic_data->investman;
+                $Basic->Main_business =$basic_data->Main_business;
+                $Basic->save();
+            }
+
+            $basic_data = Basic_info::where('stock_id', $id)->first();
+        }
+
         return view('front/basic_info', compact('basic_data','id'));
     }
 
@@ -38,11 +63,13 @@ class FrontController extends Controller
     // 法說會
     public function concall($id)
     {
-        $no = $id;
-        $jsonbasic = shell_exec("python python/new_crawlconcile.py $no");
+        // $no = $id;
+        // $jsonbasic = shell_exec("python python/new_crawlconcile.py $no");
         // dd($jsonbasic);
-        $concall_data = json_decode($jsonbasic);
-        // dd($concall_data);
+        // $concall_data = json_decode($jsonbasic);
+        $jsonbasic = file_get_contents('C:/Users/Brian/Documents/GitHub/StockIntegrationPlatform_vue/public/python/concall.json');
+        $jsonbasic = json_decode($jsonbasic);
+        dd($jsonbasic);
         return view('front/concall', compact('concall_data','id'));
     }
 

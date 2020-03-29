@@ -14,7 +14,7 @@ driver.get('https://mops.twse.com.tw/mops/web/t100sb07_1')
 
 #輸入股票代碼
 #
-# stockid="2330"
+# stockid="6560"
 stockid=sys.argv[1]
 
 driver.find_element_by_id('co_id').send_keys(stockid)#找id=email
@@ -41,10 +41,12 @@ table_data=[]
 
 for i in range(0,len(table_all)):
     table_data.append(table_all[i].text)
+    print(i,table_all[i].text)
+
 
 
 ##########################輸出成dict
-    #table_data[1].replace('\n','')
+    table_data[1].replace('\n','')
 
 tablec_dict = {
               #召開法人說明會日期：
@@ -75,14 +77,13 @@ tablec_dict = {
 
             }
 
-#driver.close()
+driver.close()
 
 concile_data= json.dumps(tablec_dict)
+
+
+
 print(concile_data)
-
-
-
-
 
 #https://mops.twse.com.tw/mops/nas/STR/
 
